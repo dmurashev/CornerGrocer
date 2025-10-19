@@ -1,0 +1,38 @@
+\doxysection{Inventory.\+cpp File Reference}
+\hypertarget{_inventory_8cpp}{}\label{_inventory_8cpp}\index{Inventory.cpp@{Inventory.cpp}}
+
+
+Implements the \doxylink{class_inventory}{Inventory} class that handles file I/O and item management.  
+
+
+{\ttfamily \#include "{}Inventory.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implements the \doxylink{class_inventory}{Inventory} class that handles file I/O and item management. 
+
+\begin{DoxyAuthor}{Author}
+Dmitrii Murashev 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/10-\/18 
+\end{DoxyDate}
+The \doxylink{class_inventory}{Inventory} class provides static methods to\+:
+\begin{DoxyItemize}
+\item Load grocery items from a text file ({\ttfamily inventory.\+txt}).
+\item Generate a backup file ({\ttfamily frequency.\+dat}) with item frequencies.
+\item Clean up dynamically allocated \doxylink{class_grocery_item}{Grocery\+Item} objects to prevent memory leaks.
+\end{DoxyItemize}
+
+This class serves as the data layer for the Corner Grocer system, allowing the program to reload and rebuild the in-\/memory map structure each time the user interacts with the menu.
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyNote}{Note}
+Course\+: CS-\/210 (Programming Languages) 
+
+Southern New Hampshire University 
+\end{DoxyNote}

@@ -1,0 +1,192 @@
+\doxysection{Interactive Class Reference}
+\hypertarget{class_interactive}{}\label{class_interactive}\index{Interactive@{Interactive}}
+
+
+Provides the user interface for the Corner Grocer program.  
+
+
+
+
+{\ttfamily \#include $<$Interactive.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_interactive_a19c517fc9bc1495b0f2acbb23159176b}{Print\+Item\+Frequency}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&items)
+\begin{DoxyCompactList}\small\item\em Prints the frequency of a specific item entered by the user. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_interactive_a6c75db19a52d7bfdd7b0ec7ac661c4ea}{Print\+All\+Items}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&items)
+\begin{DoxyCompactList}\small\item\em Displays all items and their quantities. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_interactive_abf53fe2a6005680e249155e30cb970db}{Print\+Histogram}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&items)
+\begin{DoxyCompactList}\small\item\em Prints a histogram of all item frequencies using asterisks. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_interactive_ac2e4aa9927e5b2cdb8c9a7decffc6d62}{Run\+Menu}} (const std\+::string \&input\+File, const std\+::string \&output\+File)
+\begin{DoxyCompactList}\small\item\em Runs the main interactive menu loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides the user interface for the Corner Grocer program. 
+
+\label{doc-func-members}
+\Hypertarget{class_interactive_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_interactive_a6c75db19a52d7bfdd7b0ec7ac661c4ea}\index{Interactive@{Interactive}!PrintAllItems@{PrintAllItems}}
+\index{PrintAllItems@{PrintAllItems}!Interactive@{Interactive}}
+\doxysubsubsection{\texorpdfstring{PrintAllItems()}{PrintAllItems()}}
+{\footnotesize\ttfamily \label{class_interactive_a6c75db19a52d7bfdd7b0ec7ac661c4ea} 
+void Interactive\+::\+Print\+All\+Items (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{items}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Displays all items and their quantities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em items} & Reference to the map of grocery items. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ cout\ <<\ left\ <<\ setw(15)\ <<\ \textcolor{stringliteral}{"{}Item"{}}\ <<\ \textcolor{stringliteral}{"{}Frequency"{}}\ <<\ endl;\ \ \textcolor{comment}{//\ Header}}
+\DoxyCodeLine{00052\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{for}\ (map<string,\ GroceryItem*>::iterator\ it\ =\ items.begin();\ it\ !=\ items.end();\ ++it)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ cout\ <<\ left\ <<\ setw(15)\ <<\ it-\/>first}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ it-\/>second-\/>getQuantity()\ <<\ endl;\ \ \ \ \ \ \ \textcolor{comment}{//\ Print\ item\ and\ quantity}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_interactive_abf53fe2a6005680e249155e30cb970db}\index{Interactive@{Interactive}!PrintHistogram@{PrintHistogram}}
+\index{PrintHistogram@{PrintHistogram}!Interactive@{Interactive}}
+\doxysubsubsection{\texorpdfstring{PrintHistogram()}{PrintHistogram()}}
+{\footnotesize\ttfamily \label{class_interactive_abf53fe2a6005680e249155e30cb970db} 
+void Interactive\+::\+Print\+Histogram (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{items}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints a histogram of all item frequencies using asterisks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em items} & Reference to the map of grocery items. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Purchase\ Histogram\ -\/-\/-\/\(\backslash\)n"{}};\ \ \ \textcolor{comment}{//\ Header}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{for}\ (map<string,\ GroceryItem*>::iterator\ it\ =\ items.begin();\ it\ !=\ items.end();\ ++it)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ cout\ <<\ left\ <<\ setw(15)\ <<\ it-\/>first;\ \ \textcolor{comment}{//\ Print\ item\ name}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ it-\/>second-\/>getQuantity();\ ++i)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}*"{}};\ \ \ \ \textcolor{comment}{//\ Print\ asterisks\ for\ frequency}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_interactive_a19c517fc9bc1495b0f2acbb23159176b}\index{Interactive@{Interactive}!PrintItemFrequency@{PrintItemFrequency}}
+\index{PrintItemFrequency@{PrintItemFrequency}!Interactive@{Interactive}}
+\doxysubsubsection{\texorpdfstring{PrintItemFrequency()}{PrintItemFrequency()}}
+{\footnotesize\ttfamily \label{class_interactive_a19c517fc9bc1495b0f2acbb23159176b} 
+void Interactive\+::\+Print\+Item\+Frequency (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{items}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Prints the frequency of a specific item entered by the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em items} & Reference to the map of grocery items. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{string}\ itemName;}
+\DoxyCodeLine{00037\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Enter\ item\ name:\ "{}};}
+\DoxyCodeLine{00038\ \ \ \ \ cin\ >>\ itemName;\ \ \ \ \textcolor{comment}{//\ Get\ item\ name\ from\ user}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (items.count(itemName)\ >\ 0)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ cout\ <<\ itemName\ <<\ \textcolor{stringliteral}{"{}\ purchased\ "{}}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ items.at(itemName)-\/>getQuantity()\ <<\ \textcolor{stringliteral}{"{}\ times.\(\backslash\)n"{}};\ \ \ \ \textcolor{comment}{//\ Print\ frequency}}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ cout\ <<\ itemName\ <<\ \textcolor{stringliteral}{"{}\ not\ found.\(\backslash\)n"{}};\ \ \ \ \textcolor{comment}{//\ Item\ not\ found}}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_interactive_ac2e4aa9927e5b2cdb8c9a7decffc6d62}\index{Interactive@{Interactive}!RunMenu@{RunMenu}}
+\index{RunMenu@{RunMenu}!Interactive@{Interactive}}
+\doxysubsubsection{\texorpdfstring{RunMenu()}{RunMenu()}}
+{\footnotesize\ttfamily \label{class_interactive_ac2e4aa9927e5b2cdb8c9a7decffc6d62} 
+void Interactive\+::\+Run\+Menu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+File}{, }\item[{const std\+::string \&}]{output\+File}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Runs the main interactive menu loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & Name of the input inventory file. \\
+\hline
+{\em output\+File} & Name of the output inventory backup file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ map<string,\ GroceryItem*>\ items;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ choice\ =\ 0;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_inventory_a60b7b16d030917fd8f4a6083ed0633e7}{Inventory::DeleteItems}}(items);\ \ \textcolor{comment}{//\ Clear\ previous\ data}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_inventory_a5cb1ac575b85eef60b456f5d27c07264}{Inventory::LoadInventory}}(items,\ inputFile);\ \textcolor{comment}{//\ Reload\ data\ each\ iteration}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_inventory_a30bf877753e1814754f63d5d3566058a}{Inventory::WriteFrequencyFile}}(items,\ outputFile);\ \ \ \textcolor{comment}{//\ Backup\ to\ frequency.dat}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Display\ menu}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n=======\ Corner\ Grocer\ Menu\ =======\(\backslash\)n"{}};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}1.\ Find\ frequency\ of\ an\ item\(\backslash\)n"{}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}2.\ Display\ all\ item\ frequencies\(\backslash\)n"{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}3.\ Display\ histogram\ of\ purchases\(\backslash\)n"{}};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}4.\ Exit\(\backslash\)n"{}};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Enter\ your\ choice:\ "{}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Input\ validation}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(cin\ >>\ choice))\ \{\ \textcolor{comment}{//\ Check\ for\ non-\/numeric\ input}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ cin.clear();\ \ \ \ \textcolor{comment}{//\ Clear\ error\ flag}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ cin.ignore(numeric\_limits<streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});\ \ \ \ \textcolor{comment}{//\ Clear\ invalid\ input}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ choice!\ Please\ enter\ a\ number\ 1-\/4.\(\backslash\)n"{}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};\ \ \ \textcolor{comment}{//\ Restart\ loop}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Process\ choice}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (choice)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactive_a19c517fc9bc1495b0f2acbb23159176b}{PrintItemFrequency}}(items);\ \ \textcolor{comment}{//\ Find\ frequency\ of\ an\ item}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactive_a6c75db19a52d7bfdd7b0ec7ac661c4ea}{PrintAllItems}}(items);\ \ \ \ \ \ \ \textcolor{comment}{//\ Display\ all\ item\ frequencies}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactive_abf53fe2a6005680e249155e30cb970db}{PrintHistogram}}(items);\ \ \ \ \ \ \textcolor{comment}{//\ Display\ histogram\ of\ purchases}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Exiting\ program...\(\backslash\)n"{}};\ \textcolor{comment}{//\ Exit}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ choice.\ Please\ enter\ 1-\/4.\(\backslash\)n"{}};\ \ \textcolor{comment}{//\ Handle\ invalid\ menu\ choice}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (choice\ !=\ 4);\ \ \textcolor{comment}{//\ Loop\ until\ user\ chooses\ to\ exit}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_inventory_a60b7b16d030917fd8f4a6083ed0633e7}{Inventory::DeleteItems}}(items);\ \ \textcolor{comment}{//\ Clean\ up\ before\ exit}}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_interactive_8h}{Interactive.\+h}}\item 
+\mbox{\hyperlink{_interactive_8cpp}{Interactive.\+cpp}}\end{DoxyCompactItemize}

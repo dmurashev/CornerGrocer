@@ -1,0 +1,141 @@
+\doxysection{Grocery\+Item Class Reference}
+\hypertarget{class_grocery_item}{}\label{class_grocery_item}\index{GroceryItem@{GroceryItem}}
+
+
+Represents a grocery item with a name and quantity.  
+
+
+
+
+{\ttfamily \#include $<$Grocery\+Item.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_grocery_item_a8b224bffe776ffc014b69180f39981d5}{Grocery\+Item}} (const std\+::string \&name, int quantity=1)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_grocery_item}{Grocery\+Item} with the given name and optional quantity. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_grocery_item_aabf1baaf327572d45d0b6a1d7b2fe341}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the name of the item. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_grocery_item_acb330568384e3a49bb942dcb56267143}{get\+Quantity}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current quantity of the item. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grocery_item_a600d31078e28cb289997c227bba89274}{add\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Increments the quantity of the item by one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_grocery_item_ad7412178b11fa77b9f1ae9e25501d4a1}{remove\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the quantity of the item by one if quantity \texorpdfstring{$>$}{>} 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a grocery item with a name and quantity. 
+
+\label{doc-constructors}
+\Hypertarget{class_grocery_item_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_grocery_item_a8b224bffe776ffc014b69180f39981d5}\index{GroceryItem@{GroceryItem}!GroceryItem@{GroceryItem}}
+\index{GroceryItem@{GroceryItem}!GroceryItem@{GroceryItem}}
+\doxysubsubsection{\texorpdfstring{GroceryItem()}{GroceryItem()}}
+{\footnotesize\ttfamily \label{class_grocery_item_a8b224bffe776ffc014b69180f39981d5} 
+Grocery\+Item\+::\+Grocery\+Item (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{int}]{quantity}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_grocery_item}{Grocery\+Item} with the given name and optional quantity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the grocery item. \\
+\hline
+{\em quantity} & The initial quantity (default is 1). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ :\ name(name),\ quantity(quantity)\ \{}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_grocery_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_grocery_item_a600d31078e28cb289997c227bba89274}\index{GroceryItem@{GroceryItem}!addItem@{addItem}}
+\index{addItem@{addItem}!GroceryItem@{GroceryItem}}
+\doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
+{\footnotesize\ttfamily \label{class_grocery_item_a600d31078e28cb289997c227bba89274} 
+void Grocery\+Item\+::add\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Increments the quantity of the item by one. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ ++quantity;}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_grocery_item_aabf1baaf327572d45d0b6a1d7b2fe341}\index{GroceryItem@{GroceryItem}!getName@{getName}}
+\index{getName@{getName}!GroceryItem@{GroceryItem}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_grocery_item_aabf1baaf327572d45d0b6a1d7b2fe341} 
+const std\+::string \& Grocery\+Item\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the name of the item. 
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the item name. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_grocery_item_acb330568384e3a49bb942dcb56267143}\index{GroceryItem@{GroceryItem}!getQuantity@{getQuantity}}
+\index{getQuantity@{getQuantity}!GroceryItem@{GroceryItem}}
+\doxysubsubsection{\texorpdfstring{getQuantity()}{getQuantity()}}
+{\footnotesize\ttfamily \label{class_grocery_item_acb330568384e3a49bb942dcb56267143} 
+int Grocery\+Item\+::get\+Quantity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the current quantity of the item. 
+
+\begin{DoxyReturn}{Returns}
+Integer quantity. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{return}\ quantity;}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_grocery_item_ad7412178b11fa77b9f1ae9e25501d4a1}\index{GroceryItem@{GroceryItem}!removeItem@{removeItem}}
+\index{removeItem@{removeItem}!GroceryItem@{GroceryItem}}
+\doxysubsubsection{\texorpdfstring{removeItem()}{removeItem()}}
+{\footnotesize\ttfamily \label{class_grocery_item_ad7412178b11fa77b9f1ae9e25501d4a1} 
+void Grocery\+Item\+::remove\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Decrements the quantity of the item by one if quantity \texorpdfstring{$>$}{>} 0. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (quantity\ >\ 0)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ -\/-\/quantity;}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_grocery_item_8h}{Grocery\+Item.\+h}}\item 
+\mbox{\hyperlink{_grocery_item_8cpp}{Grocery\+Item.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+\doxysection{Inventory.\+h}
+\hypertarget{_inventory_8h_source}{}\label{_inventory_8h_source}\mbox{\hyperlink{_inventory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_grocery_item_8h}{GroceryItem.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_inventory}{Inventory}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_inventory_a5cb1ac575b85eef60b456f5d27c07264}{LoadInventory}}(std::map<std::string,\ GroceryItem*>\&\ items,\ \textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_inventory_a30bf877753e1814754f63d5d3566058a}{WriteFrequencyFile}}(std::map<std::string,\ GroceryItem*>\&\ items,\ \textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_inventory_a60b7b16d030917fd8f4a6083ed0633e7}{DeleteItems}}(std::map<std::string,\ GroceryItem*>\&\ items);}
+\DoxyCodeLine{00031\ \};}
+
+\end{DoxyCode}

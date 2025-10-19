@@ -1,0 +1,42 @@
+\doxysection{Interactive.\+cpp File Reference}
+\hypertarget{_interactive_8cpp}{}\label{_interactive_8cpp}\index{Interactive.cpp@{Interactive.cpp}}
+
+
+Implements the \doxylink{class_interactive}{Interactive} class responsible for user interface and interaction.  
+
+
+{\ttfamily \#include "{}Interactive.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+
+
+\doxysubsection{Detailed Description}
+Implements the \doxylink{class_interactive}{Interactive} class responsible for user interface and interaction. 
+
+\begin{DoxyAuthor}{Author}
+Dmitrii Murashev 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/10-\/18 
+\end{DoxyDate}
+The \doxylink{class_interactive}{Interactive} class manages the text-\/based user interface for the Corner Grocer system. It displays menu options, validates user input, and calls functions from Inventory\+Manager to load data, print reports, and save backup files.
+
+The menu provides the following options\+:
+\begin{DoxyEnumerate}
+\item Search for a specific item and display its frequency.
+\item Display all item frequencies.
+\item Display a histogram of purchases.
+\item Exit the program.
+\end{DoxyEnumerate}
+
+Input validation ensures that the program handles non-\/numeric input gracefully and avoids infinite loops caused by invalid data.
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyNote}{Note}
+Course\+: CS-\/210 (Programming Languages) 
+
+Southern New Hampshire University 
+\end{DoxyNote}

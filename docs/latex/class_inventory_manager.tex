@@ -1,0 +1,124 @@
+\doxysection{Inventory\+Manager Class Reference}
+\hypertarget{class_inventory_manager}{}\label{class_inventory_manager}\index{InventoryManager@{InventoryManager}}
+
+
+Handles file I/O and memory management for the grocery inventory.  
+
+
+
+
+{\ttfamily \#include $<$Inventory.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_inventory_manager_adedc79e602dc74f366bfc1c4bacf0b11}{Load\+Inventory}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&items, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads items from an input file into the map. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_inventory_manager_a401250dd2ffc5de9e91c8226a01e355c}{Write\+Frequency\+File}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&items)
+\begin{DoxyCompactList}\small\item\em Writes all items and their frequencies to "{}frequency.\+dat"{}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_inventory_manager_a3b553760ca6911264b207cfd6263f41c}{Delete\+Items}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&items)
+\begin{DoxyCompactList}\small\item\em Frees all dynamically allocated \doxylink{class_grocery_item}{Grocery\+Item} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles file I/O and memory management for the grocery inventory. 
+
+\label{doc-func-members}
+\Hypertarget{class_inventory_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_inventory_manager_a3b553760ca6911264b207cfd6263f41c}\index{InventoryManager@{InventoryManager}!DeleteItems@{DeleteItems}}
+\index{DeleteItems@{DeleteItems}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{DeleteItems()}{DeleteItems()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a3b553760ca6911264b207cfd6263f41c} 
+void Inventory\+Manager\+::\+Delete\+Items (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{items}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Frees all dynamically allocated \doxylink{class_grocery_item}{Grocery\+Item} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em items} & Reference to the map of items. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ items.begin();\ it\ !=\ items.end();\ ++it)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it-\/>second;}
+\DoxyCodeLine{00060\ \ \ \ \ items.clear();}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_inventory_manager_adedc79e602dc74f366bfc1c4bacf0b11}\index{InventoryManager@{InventoryManager}!LoadInventory@{LoadInventory}}
+\index{LoadInventory@{LoadInventory}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{LoadInventory()}{LoadInventory()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_adedc79e602dc74f366bfc1c4bacf0b11} 
+void Inventory\+Manager\+::\+Load\+Inventory (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{items}{, }\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Loads items from an input file into the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em items} & Reference to the map of items. \\
+\hline
+{\em filename} & Name of the inventory file. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ ifstream\ inFS(filename);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (!inFS.is\_open())\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Cannot\ open\ "{}}\ <<\ filename\ <<\ endl;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{while}\ (inFS\ >>\ name)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (items.count(name)\ >\ 0)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ items.at(name)-\/>addItem();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ GroceryItem*\ newItem\ =\ \textcolor{keyword}{new}\ GroceryItem(name);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ items.emplace(name,\ newItem);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ inFS.close();}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_inventory_manager_a401250dd2ffc5de9e91c8226a01e355c}\index{InventoryManager@{InventoryManager}!WriteFrequencyFile@{WriteFrequencyFile}}
+\index{WriteFrequencyFile@{WriteFrequencyFile}!InventoryManager@{InventoryManager}}
+\doxysubsubsection{\texorpdfstring{WriteFrequencyFile()}{WriteFrequencyFile()}}
+{\footnotesize\ttfamily \label{class_inventory_manager_a401250dd2ffc5de9e91c8226a01e355c} 
+void Inventory\+Manager\+::\+Write\+Frequency\+File (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{class_grocery_item}{Grocery\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{items}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes all items and their frequencies to "{}frequency.\+dat"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em items} & Reference to the map of items. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ ofstream\ outFS(\textcolor{stringliteral}{"{}frequency.dat"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ items.begin();\ it\ !=\ items.end();\ ++it)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ outFS\ <<\ it-\/>first\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ it-\/>second-\/>getQuantity()\ <<\ endl;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ outFS.close();}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_inventory_8h}{Inventory.\+h}}\item 
+\mbox{\hyperlink{_inventory_8cpp}{Inventory.\+cpp}}\end{DoxyCompactItemize}
